@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "spotify",
+    "name": "spotify-login",
     "slug": "snack-2af3332e-bc1b-454c-9e62-45e98b8d5c71",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,6 +28,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "fonts": {
+      "SpotifyFont-Regular": "./assets/fonts/CircularStd-Bold.ttf"
     }
   }
 }

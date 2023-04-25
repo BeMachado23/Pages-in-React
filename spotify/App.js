@@ -1,114 +1,99 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Constants from 'expo-constants';
-
-
-// You can import from local files
-
-
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-      <Text style={styles.saudacao}>
-        Good morning 
-      </Text>
-    </View>
+    <View style={{
+      backgroundColor: 'rgb(0,0,0)',
+      backgroundImage: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(50,50,50,1) 100%)',
+      flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Image source = {require('./assets/spotify.png')} style = {{width: 100, height: 100}}/>
 
-      <View style={styles.filtros}> 
-      <Text style={styles.filtrar1}>
-      Music
-      </Text> 
-      
-      <Text style={styles.filtrar2}>
-      Podcasts & Shows
-      </Text>
-      </View>
-      
-      <View style={styles.playlists}>
-      <Image style = {styles.abcde} source = {require('./assets/abcde.png')}/>
-      <Text style={styles.playlist1}>
-      ABCDEF
-      </Text>
-      
-      <Image style = {styles.likedsongs} source = {require('./assets/likedmusics.png')}/>
-      <Text style={styles.playlist2}>
-      Liked Songs
-      </Text>  
+        <Text style={styles.paragraph}>
+          Millions of songs.{`\n`}Free on Spotify.
+        </Text>
+        <View>
+        <TouchableOpacity style={styles.button1}>
+        <Text style={styles.sign}>Sign up free</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.button2}>
+        <Image source = {require('./assets/celular.png')} style = {{width: 20, height: 0}}/> <Text style={styles.text}>Continue with phone number</Text>
+        </TouchableOpacity>
 
-      <Image style = {styles.rock} source = {require('./assets/rock.png')}/>
-      <Text style={styles.playlist3}>
-      Rock
-      </Text>
+        <TouchableOpacity style={styles.button2}>
+        <Text style={styles.text}>Continue with Google</Text>
+        </TouchableOpacity>
 
-      <Image style = {styles.caf} source = {require('./assets/caf.png')}/>
-      <Text style={styles.playlist4}>
-      Cigarettes After Sex
-      </Text>
+        <TouchableOpacity style={styles.button2}>
+        <Text style={styles.text}>Continue with Facebook</Text>
+        </TouchableOpacity>
 
-      <Image style = {styles.gym} source = {require('./assets/Gym.png')}/>
-      <Text style={styles.playlist5}>
-      Gym Sad
-      </Text>
+        <TouchableOpacity style={styles.button3}>
+        <Text style={styles.text}>Log in</Text>
+        </TouchableOpacity>
 
-      <Image style = {styles.blend1} source = {require('./assets/blend.png')}/>
-      <Text style={styles.playlist6}>
-      ChristianCsilveira + Enzo + blonde...
-      </Text>
-      </View>
-
-      <Text style={styles.more}>
-      More of what you like
-      </Text>
-
-      <View style={styles.More}>
-      <Text style={styles.topgamingtracks}>
-      Kordhell, Freddie Dredd, The Weekend, Drake, 21... 
-      </Text>
-
-      <Text style={styles.phonk}>
-      Kordhell, Oliver Tree, The Notorius B.I.G, INTER...
-      </Text>
-      </View>
+        </View>
+      </View> 
       
-      <Text style={styles.madeforus}>
-      Made For Us
-      </Text>
-      
-      <Text style={styles.made1}>
-      Create a blend
-      </Text>
-      
-      <Text style={styles.madesub1}>
-      A playlist for you and a friend.
-      </Text>
-      
-      <Text style={styles.made2}>
-      blonded + Bernardo
-      </Text>
-
-      <Text style={styles.madesub2}>
-      Playlist - A blend of music for Bernardo and blond...
-      </Text>
-      
-      
-    </View>
+    
   );
 }
-
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#121212'
+  paragraph: {
+    margin: 24,
+    fontSize: 27,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: `white`,
+    marginTop: 70,
+    fontFamily:''
+     
   },
- abcde:{
-   width: 50,
-   height: 50,
- },
- playlists:{
-   width: 50,
-   hight: 50,
- }
+  sign:{
+    fontSize: 16,
+    fontFamily: '',
+  },
+  text:{
+    fontSize: 16,
+    color: 'white',
+    fontFamily: '',
+  },
+  button1:{
+    backgroundColor: '#32cd32',
+    width: 280,
+    height: 40,
+    borderRadius: 23,
+    display: 'flex',
+    alingnItems: 'center',
+    alignContent: 'center',
+    justifyContent:'center',
+    textAlign: `center`,
+    marginTop: 60
+  },
+  button2:{
+    width: 280,
+    height: 40,
+    borderRadius: 23,
+    display: 'flex',
+    alingnItems: 'center',
+    alignContent: 'center',
+    justifyContent:'center',
+    borderWidth: 1,
+    borderColor: 'grey',
+    marginTop: 9,
+    textAlign: `center`
+  },
+  button3:{
+    width: 280,
+    height: 40,
+    display: 'flex',
+    alingnItems: 'center',
+    alignContent: 'center',
+    justifyContent:'center',
+    marginTop: 9,
+    textAlign: `center`
+  }
+
 });
